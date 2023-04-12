@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "796648597747",
+    "project_id": "crossface-70cd2",
+    "storage_bucket": "crossface-70cd2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:796648597747:android:674aae61710626e4426f86",
+        "android_client_info": {
+          "package_name": "com.example.crossface"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "796648597747-aqgd6koul48786enu27h3sep8sq0eng4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.crossface",
+            "certificate_hash": "dfeafe1f381eb975bcb47fa0090b0baf2084e62c"
+          }
+        },
+        {
+          "client_id": "796648597747-e8vj2qs0rs14qmku80a14lqp19lg40qt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXr2Ef3ExznA7BCIPgIz6snVFEbAFD3yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "796648597747-9ta0981torqt90d81v5jp4birath8hos.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "796648597747-ade9r9vc03jhf5ve4k4v0qm5o0n9sjic.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.crossface"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
