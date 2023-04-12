@@ -1,11 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 
 class FirebaseServices {
   final _auth = FirebaseAuth.instance;
   final _googleSignIn = GoogleSignIn();
+  final _firestore = FirebaseFirestore.instance;
 
   signInWithGoogle() async {
     try {
@@ -17,7 +18,19 @@ class FirebaseServices {
         final AuthCredential authCredential = GoogleAuthProvider.credential(
             accessToken: googleSignInAuthentication.accessToken,
             idToken: googleSignInAuthentication.idToken);
-        await _auth.signInWithCredential(authCredential);
+        final userCredential =  await _auth.signInWithCredential(authCredential);
+        //await _auth.signInWithCredential(authCredential);
+
+        // Добавление пользователя в коллекцию "users"
+        final user = userCredential.user;
+        if (user != null) {
+          _firestore.collection('users').doc(user.uid).set({
+            'uid': user.uid,
+            'displayName': user.displayName,
+            'email': user.email,
+            'photoURL': user.photoURL,
+          }, SetOptions(merge: true));
+        }
       }
     } on FirebaseAuthException catch  (e) {
       print(e.message);
