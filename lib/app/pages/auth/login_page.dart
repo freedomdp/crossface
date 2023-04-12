@@ -1,9 +1,6 @@
 import 'package:crossface/app/services/firebase_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:crossface/app/services/firebase_services.dart';
-import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
-
 
 import 'package:crossface/app/common/style/colors.dart';
 import 'package:crossface/app/common/style/text_style.dart';
