@@ -59,8 +59,6 @@ class LoginPage extends StatelessWidget {
                 child: Center(
                     child: Image.asset(
                   'assets/images/auth/Logo.png',
-                  //child: SvgPicture.network(
-                  //'https://firebasestorage.googleapis.com/v0/b/crossface-70cd2.appspot.com/o/Auth%2FLogo.svg?alt=media&token=4e26659c-0d96-4f26-8ae2-5b5c4e9221cd',
                   width: 290,
                   height: 60,
                 ))),
