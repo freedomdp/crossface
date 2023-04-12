@@ -1,16 +1,7 @@
-# crossface
+CrossFace is an app that finds people with the same interests as you
 
-CrossFace solution
+Дизайн приложения и UI kit в Figma: https://www.figma.com/file/zJCC5L1WfMjjHmWRitpEs4/CrossFace-(Dev)?node-id=0%3A1&t=rbS6h0GXtGoUya3T-1
 
-## Getting Started
+Бизнес логика приложения: https://docs.google.com/document/u/0/d/1m_faytkSOe6siUDzUGo7xr0sy2GSQ63qPrqoxSoJjzI/edit
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Стек применяемых технологий: https://docs.google.com/document/u/0/d/1BJ1thxhAKYZQFKqT7loUHsWGqlSLrHQHfh7AcK1NMBg/edit
