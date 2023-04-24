@@ -1,15 +1,10 @@
+import 'package:crossface/app/common/routes/routes.dart';
+import 'package:crossface/app/common/style/botton_styles.dart';
+import 'package:crossface/app/common/style/colors.dart';
+import 'package:crossface/app/common/style/text_style.dart';
 import 'package:crossface/app/services/firebase_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:crossface/app/services/firebase_services.dart';
-import 'package:firebase_core_platform_interface/firebase_core_platform_interface.dart';
-
-
-import 'package:crossface/app/common/style/colors.dart';
-import 'package:crossface/app/common/style/text_style.dart';
-import 'package:crossface/app/common/style/botton_styles.dart';
-
-import 'package:crossface/app/common/routes/routes.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -28,10 +23,10 @@ class LoginPage extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            const Positioned(
+            Positioned(
                 top: 120,
                 child: Row(
-                  children: [
+                  children: const [
                     Text(
                       "В городе ",
                       style: TextStyles.label_auth_top,
@@ -71,7 +66,7 @@ class LoginPage extends StatelessWidget {
                   child: ElevatedButton(
                     style: ButtonStyles.btnStyle_auth(),
                     onPressed: () async {
-                      await FirebaseServices().signInWithGoogle();
+                      await FirebaseServices.instance.signInWithGoogle();
                       Get.offNamed(Routes.USER_PROFILE);
                     },
                     child: Padding(

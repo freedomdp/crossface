@@ -1,18 +1,19 @@
+import 'package:crossface/app/common/routes/routes.dart';
+import 'package:crossface/app/common/style/text_style.dart';
+import 'package:crossface/app/common/widgets/BottomNavigationBar.dart';
+import 'package:crossface/app/common/widgets/CustomAppBar.dart';
+import 'package:crossface/app/services/firebase_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:crossface/app/common/widgets/BottomNavigationBar.dart';
-import 'package:crossface/app/common/widgets/CustomAppBar.dart';
-
-import 'package:crossface/app/common/style/text_style.dart';
-import 'package:crossface/app/common/routes/routes.dart';
-import 'package:crossface/app/services/firebase_services.dart';
 
 class UserProfilePage extends StatelessWidget {
+  const UserProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     // передаю в переменную данные про авторизованного пользователя
-    final User? user = FirebaseAuth.instance.currentUser;
+    final User? user = FirebaseServices.instance.auth.currentUser;
 
     return Scaffold(
       appBar: CustomAppBar(logoPath: 'assets/images/auth/Logo.png'),
@@ -22,11 +23,13 @@ class UserProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              child:  Column(
+              child: Column(
                 children: [
                   const SizedBox(height: 50),
                   if (user!.photoURL != null)
-                    CircleAvatar(radius: 50, backgroundImage: NetworkImage(user.photoURL!)),
+                    CircleAvatar(
+                        radius: 50,
+                        backgroundImage: NetworkImage(user.photoURL!)),
                   const SizedBox(height: 10),
                   Text(
                     "Имя: ${user.displayName ?? 'Не указано'}",
@@ -58,7 +61,7 @@ class UserProfilePage extends StatelessWidget {
             ),
             ElevatedButton(
                 onPressed: () async {
-                  await FirebaseServices().signOut();
+                  await FirebaseServices.instance.signOut();
                   Get.offNamed(Routes.AUTH);
                 },
                 child: const Text('Выход')),
