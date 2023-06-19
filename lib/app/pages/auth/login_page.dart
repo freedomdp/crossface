@@ -6,6 +6,8 @@ import 'package:crossface/app/services/firebase_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../logic/backend_services.dart';
+
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -66,7 +68,8 @@ class LoginPage extends StatelessWidget {
                   child: ElevatedButton(
                     style: ButtonStyles.btnStyle_auth(),
                     onPressed: () async {
-                      await FirebaseServices.instance.signInWithGoogle();
+                      await FirebaseServices.instance.signInWithGoogle().then(
+                          () => CrossFaceAPI.instance.createUserAfterLogin());
                       Get.offNamed(Routes.USER_PROFILE);
                     },
                     child: Padding(
